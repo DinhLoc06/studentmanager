@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Manager</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <span>School Manager</span>
+        </div>
+
+        <nav class="nav-menu">
+          <button class="nav-item active" type="button">
+            <span class="nav-icon">👤</span>
+            <span>Sinh viên</span>
+          </button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <button class="icon-button menu-button" type="button" aria-label="Menu">
+            ☰
+          </button>
+          <h1>Quản lý đào tạo</h1>
+        </header>
+
+        <section class="content">
+          <div class="page-head">
+            <h2>Quản lý sinh viên</h2>
+            <div class="breadcrumb">Trang chủ / <span>Sinh viên</span></div>
+          </div>
+
+          <div class="toolbar">
+            <div class="search-box">
+              <span class="search-icon">⌕</span>
+              <input id="searchInput" type="text" placeholder="Tìm theo mã / họ tên / email..." />
+            </div>
+
+            <div class="toolbar-actions">
+              <button id="searchBtn" class="primary-btn" type="button">Tìm kiếm</button>
+              <button class="primary-btn accent" type="button">Thêm sinh viên</button>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã sinh viên</th>
+                  <th>Họ và tên</th>
+                  <th>Email</th>
+                  <th>Số điện thoại</th>
+                  <th>Lớp</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/students.js"></script>
+  </body>
+</html>
