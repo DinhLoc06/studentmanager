@@ -258,7 +258,22 @@ function filterStudents(keyword) {
   const query = (keyword || '').trim();
 
   if (!studentDataTable) {
-    renderStudents(allStudents);
+    const normalizedQuery = query.toLocaleLowerCase();
+    const filteredStudents = allStudents.filter((student) => {
+      const searchableText = [
+        student.studentCode,
+        student.fullName,
+        student.email,
+        student.phone,
+        student.className
+      ]
+        .map((value) => safeText(value).toLocaleLowerCase())
+        .join(' ');
+
+      return searchableText.includes(normalizedQuery);
+    });
+
+    renderStudents(filteredStudents);
     return;
   }
 
